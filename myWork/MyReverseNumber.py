@@ -4,6 +4,7 @@ def myReverse(num):
 
     if num == 0:
         return
+
     reverse = 0
     while num > 0:
         reminder = num % 10

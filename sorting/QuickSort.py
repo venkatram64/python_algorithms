@@ -1,14 +1,21 @@
 
 class QuickSort:
+
     def quickSort(self, nums):
         self.quickSort2(nums, 0, len(nums) -1)
 
+    '''
+    recursion function
+    '''
     def quickSort2(self, nums, low, hi):
-        if low < hi:
+        if low < hi:  #base condition
             p = self.partition(nums, low, hi)
             self.quickSort2(nums, low, p - 1)
             self.quickSort2(nums, p + 1, hi)
 
+    '''
+    sorting on the basis of pivot and gives the border value
+    '''
     def partition(self, nums, low, hi):
         pivotIndex = self.getPivot(nums, low, hi)
         pivotValue = nums[pivotIndex]
@@ -23,7 +30,9 @@ class QuickSort:
         nums[low], nums[border] = nums[border], nums[low]
         return border
 
-
+    '''
+    selecting a pivot value
+    '''
     def getPivot(self, nums, low, hi):
         mid = (hi + low)//2
         pivot = hi
