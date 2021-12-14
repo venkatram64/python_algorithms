@@ -6,41 +6,54 @@ class QuickSort:
 
     '''
     recursion function
+    17, 41, 5, 22, 54, 6, 29, 3, 13
+    if startIndex < endIndex ==> if 0 < 9
     '''
-    def quickSort2(self, nums, low, hi):
-        if low < hi:  #base condition
-            p = self.partition(nums, low, hi)
-            self.quickSort2(nums, low, p - 1)
-            self.quickSort2(nums, p + 1, hi)
+    def quickSort2(self, nums, startIndex, endIndex):
+        if startIndex < endIndex:  #base condition
+            p = self.partition(nums, startIndex, endIndex)
+            self.quickSort2(nums, startIndex, p - 1)
+            self.quickSort2(nums, p + 1, endIndex)
 
     '''
     sorting on the basis of pivot and gives the border value
     '''
-    def partition(self, nums, low, hi):
-        pivotIndex = self.getPivot(nums, low, hi)
+    def partition(self, nums, startIndex, endIndex):
+        pivotIndex = self.getPivot(nums, startIndex, endIndex)
         pivotValue = nums[pivotIndex]
-        nums[pivotIndex], nums[low] = nums[low], nums[pivotIndex]
-        border = low
+        nums[pivotIndex], nums[startIndex] = nums[startIndex], nums[pivotIndex]
+        border = startIndex
 
-        for i in range(low, hi+1):
+        for i in range(startIndex, endIndex+1):
             if nums[i] < pivotValue:
                 border += 1
                 nums[i], nums[border] = nums[border], nums[i]
 
-        nums[low], nums[border] = nums[border], nums[low]
+        nums[startIndex], nums[border] = nums[border], nums[startIndex]
         return border
 
     '''
-    selecting a pivot value
+    selecting a pivot index
+    17, 41, 5, 22, 54, 6, 29, 3, 13
+    mid = (17 + 13)//2 
+    mid = 15 
+    nums[0] < nums[9] 
+    17 < 13
+    ...
+    ...
+    pivot = endIndex(17)    
     '''
-    def getPivot(self, nums, low, hi):
-        mid = (hi + low)//2
-        pivot = hi
-        if nums[low] < nums[mid]:
-            if nums[mid] < nums[hi]:
+    def getPivot(self, nums, startIndex, endIndex):
+        mid = (endIndex + startIndex)//2  # find the median of hi and low of index
+        pivot = endIndex
+        if nums[startIndex] < nums[mid]:
+            if nums[mid] < nums[endIndex]:
                 pivot = mid
-            elif nums[low] < nums[hi]:
-                pivot = low
+            elif nums[startIndex] < nums[endIndex]:
+                pivot = startIndex
+        else:
+            pivot = endIndex
+
         return pivot
 
 
