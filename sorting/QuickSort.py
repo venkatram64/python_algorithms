@@ -41,7 +41,7 @@ class QuickSort:
     17 < 13
     ...
     ...
-    pivot = endIndex(17)    
+    pivot = endIndex(ie17)    
     '''
     def getPivot(self, nums, startIndex, endIndex):
         mid = (endIndex + startIndex)//2  # find the median of hi and low of index
