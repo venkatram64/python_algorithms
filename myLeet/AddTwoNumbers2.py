@@ -27,7 +27,7 @@ class AddTwoNumbers:
     def addTwoNumbers(self, l1, l2):
         carry = 0
         result = ListNode(0)
-        pointer = result
+        current = result
 
         while (l1 or l2 or carry):
             first_num = l1.val if l1.val else 0
@@ -38,9 +38,9 @@ class AddTwoNumbers:
             num = sum % 10
             carry = sum // 10
 
-            pointer.next = ListNode(num)
+            current.next = ListNode(num)
 
-            pointer = pointer.next
+            current = current.next
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
 
