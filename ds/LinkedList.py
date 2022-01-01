@@ -8,8 +8,8 @@ class Node:
 
 class LinkedList:
     def __init__(self):
-        self.head = None # head pointer to point to the node
-        self.tail = None # tail pointer to point to the node
+        self.head = None  #head pointer to point to the node
+        self.tail = None  #tail pointer to point to the node
 
     #adding element at the front
     def insert_at_beginning(self, data):
@@ -33,7 +33,7 @@ class LinkedList:
             self.head = Node(data, None)
             return
 
-        # moving at the end
+        #fist move at the end list, then add the element
         current = self.head
         while current.next:
             current = current.next
@@ -72,7 +72,7 @@ class LinkedList:
     def remove_by_value(self, data):
         if data is None:
             return
-        #first element data
+        #if data is first element
         if self.head.data == data:
             self.head = self.head.next
             print(f'{data} is deleted')
@@ -83,6 +83,7 @@ class LinkedList:
         while current:
             if current.data == data:
                 previous.next = current.next
+                print(f'{data} is deleted')
                 break
             previous = current
             current = current.next
