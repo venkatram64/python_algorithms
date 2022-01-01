@@ -29,9 +29,9 @@ class AddTwoNumbers:
         result = ListNode(0)
         current = result
 
-        while (l1 or l2 or carry):
-            first_num = l1.val if l1.val else 0
-            second_num = l2.val if l2.val else 0
+        while l1 or l2 or carry:
+            first_num = l1.val if l1.val else 0  #ternery operator
+            second_num = l2.val if l2.val else 0 #ternery operator
 
             sum = first_num + second_num + carry
 
@@ -39,8 +39,8 @@ class AddTwoNumbers:
             carry = sum // 10
 
             current.next = ListNode(num)
-
             current = current.next
+
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
 
@@ -65,8 +65,10 @@ class AddTwoNumbers:
 
 if __name__ == '__main__':
     addTwoNums = AddTwoNumbers()
-    l1 = [2,4,3]
-    l2 = [5,6,4]
+    #l1 = [2,4,3]
+    #l2 = [5,6,4]
+    l1 = [9, 9, 9, 9, 9, 9, 9]
+    l2 = [9, 9, 9, 9]
     ll_1 = addTwoNums.convertListIntoLinkedList(l1)
     addTwoNums.readLinkedList(ll_1)
     ll_2 = addTwoNums.convertListIntoLinkedList(l2)
