@@ -3,19 +3,19 @@
 from collections import deque
 
 def addElements(nums):
-    stack = deque()  #deque can be used as stack
-    print(dir(stack))
+    queue = deque() #deque can be used as queue
+    print(dir(queue))
     for i in nums:
-        stack.append(i)
+        queue.appendleft(i)
 
     print("Below one is iteration:")
-    for i in stack:
+    for i in queue:
         print(f'{i}')
 
     #poping the elements
-    print("Below one is stack popping out")
-    while len(stack) > 0:
-        print(f'{stack.pop()} popped out...')
+    print("Below one is queue popping out")
+    while len(queue) > 0:
+        print(f'{queue.pop()} popped out...')
 
 
 
