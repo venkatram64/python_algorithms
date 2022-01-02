@@ -1,5 +1,6 @@
 '''
-Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+Given an integer array nums, find the contiguous subarray (containing at least one number)
+which has the largest sum and return its sum.
 
 A subarray is a contiguous part of an array.
 
@@ -22,17 +23,18 @@ Output: 23
 class MaxSubArray:
     def maxSubArray(self, nums):
         currentSum = 0
+        # assign large negative value
         maxSum = -9999999
-        for index, value in enumerate(nums):
+        for index, value in enumerate(nums): #enumerate gives the array index and value
             currentSum += value
-            if currentSum > maxSum:
-                maxSum = currentSum
+            if currentSum > maxSum: #current sum is compared with maxSum
+                maxSum = currentSum #re setting
 
-            if value > maxSum:
-                maxSum = value
+            if value > maxSum: #individual number is compared with the maxSum
+                maxSum = value #re setting
                 currentSum = value #re setting
 
-            if value > currentSum:
+            if value > currentSum: #individual number should be greater currentSum is checked
                 currentSum = value #re setting
 
         return maxSum
