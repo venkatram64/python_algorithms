@@ -18,8 +18,8 @@ class MergeSort:
     def merge(self, nums, first, middle, last):
         left = nums[first:middle+1]
         right = nums[middle+1: last+1]
-        left.append(999999999)  #add arbitray big number
-        right.append(999999999)  #add arbitray big number
+        left.append(999999999)  #add arbitrary big number
+        right.append(999999999)  #add arbitrary big number
         i = j = 0
         for k in range(first, last + 1):
             if left[i] <= right[j]:

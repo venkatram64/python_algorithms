@@ -29,7 +29,7 @@ a ^ b ==> bitwise xor
 0 ^ 1 = 1
 1 ^ 1 = 0
 
-lef shift
+left shift
 
 a << b ==> *2 **b
 
