@@ -5,6 +5,7 @@ def myDectionary1():
         squares[x] = x * x
 
     print(squares)
+    print("******************")
     return squares
 
 if __name__ == '__main__':
