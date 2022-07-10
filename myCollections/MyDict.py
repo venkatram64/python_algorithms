@@ -1,4 +1,4 @@
-
+#https://www.w3schools.com/python/python_dictionaries_methods.asp
 def myDectionary1():
     squares = {}
     for x in range(6):
